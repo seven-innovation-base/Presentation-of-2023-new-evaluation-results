@@ -3,8 +3,8 @@
 <font face="黑体" size= 4 color="#000066">
 
 * 参选人员
-	* 林任
-	* 刘一航
+* * 林任
+* * 刘一航
 ## <font color="#660000">现场图片</font>
 ![avatar](./images/1.jpg)
 ![avatar](./images/2.jpg)
