@@ -6,12 +6,11 @@
 	* 林任
 	* 刘一航
 ##<font color="#660000">现场图片</font>
-![avatar](https://img2023.cnblogs.com/blog/2622286/202303/2622286-20230327160206000-44061814.jpg)
+![avatar](./images/1.jpg)
 
-![avatar](https://img2023.cnblogs.com/blog/2622286/202303/2622286-20230327160243484-1503731607.jpg)
-
-![avatar](https://img2023.cnblogs.com/blog/2622286/202303/2622286-20230327160322479-1954644999.jpg)
-
-![avatar](https://img2023.cnblogs.com/blog/2622286/202303/2622286-20230327160410342-648928372.jpg)
-
-![avatar](https://img2023.cnblogs.com/blog/2622286/202303/2622286-20230327160458469-1777683832.jpg)
+![avatar](./images/2.jpg)
+![avatar](./images/3.jpg)
+![avatar](./images/4.jpg)
+![avatar](./images/5.jpg)
+![avatar](./images/6.jpg)
+![avatar](./images/7.jpg)
