@@ -5,9 +5,8 @@
 * 参选人员
 	* 林任
 	* 刘一航
-##<font color="#660000">现场图片</font>
+## <font color="#660000">现场图片</font>
 ![avatar](./images/1.jpg)
-
 ![avatar](./images/2.jpg)
 ![avatar](./images/3.jpg)
 ![avatar](./images/4.jpg)
