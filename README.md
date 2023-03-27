@@ -40,7 +40,7 @@ git init
 * 拉取远程仓库主分支文件
 
 ~~~shell
-git push origin master
+git pull origin master
 ~~~
 
 * 2、添加文件到暂存区
