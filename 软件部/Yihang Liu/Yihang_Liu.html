@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta name="description" content="野生程序猿的野外生活" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>假期小项目-黄金矿工 |  Lucky_blog</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-假期小项目"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  假期小项目-黄金矿工
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/03/12/%E5%81%87%E6%9C%9F%E5%B0%8F%E9%A1%B9%E7%9B%AE/" class="article-date">
+  <time datetime="2023-03-12T03:00:52.481Z" itemprop="datePublished">2023-03-12</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/2023-QT-%E9%A1%B9%E7%9B%AE-%E9%BB%84%E9%87%91%E7%9F%BF%E5%B7%A5/">/2023/QT/项目/黄金矿工</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">1.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">5 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>​<br>​<br>&emsp;&emsp;假期计划用QT写一个小项目-黄金矿工，一边学习QT一边巩固’C+ +,在这里简单记录一下。<br> <span id="more"></span><br> &emsp;&emsp;这是我第一次着手C+ +的项目，仿照4399上的游戏来做，能做成什么样我也不是很清楚，先列一下大概的思路吧</p>
+<h1 id="场景设置"><a href="#场景设置" class="headerlink" title="场景设置"></a>场景设置</h1><p> &emsp;&emsp;从最熟悉的黄金矿工来看大致需要4个场景</p>
+<h3 id="开始界面"><a href="#开始界面" class="headerlink" title="开始界面"></a>开始界面</h3><p> &emsp;&emsp;从功能上看只需要实现点击开始进入游戏的功能。<br> <img src="4.png" alt="4"></p>
+<h3 id="游戏进行中"><a href="#游戏进行中" class="headerlink" title="游戏进行中"></a>游戏进行中</h3><p> &emsp;&emsp;分析游戏画面，不难看出来这里应该有7个功能，分别是<br> &emsp;&emsp;&emsp;&emsp; (1)文字显示，例如当前金钱，时间，目标分数等<br> &emsp;&emsp;&emsp;&emsp; (2)背景以及矿工的实现<br> &emsp;&emsp;&emsp;&emsp; (3)旋转钩子及释放钩子<br> &emsp;&emsp;&emsp;&emsp; (4)返回上一等级的按钮<br> &emsp;&emsp;&emsp;&emsp; (5)时间到后，判断是否达到目标以及进入转场界面<br> &emsp;&emsp;&emsp;&emsp; (6)矿物的显示及移动<br> &emsp;&emsp;&emsp;&emsp; (7)特殊物品的显示及使用<br> <img src="2.png" alt="2"></p>
+<h3 id="转场界面"><a href="#转场界面" class="headerlink" title="转场界面"></a>转场界面</h3><p> &emsp;&emsp;游戏时间到之后有一个简单的转场动画，但是达到分数与未达分数界面并不一致，但是背景上总体来说是一样的可以用Qlabel改变文字。<br> <img src="3.png" alt="3"></p>
+<h3 id="商店界面"><a href="#商店界面" class="headerlink" title="商店界面"></a>商店界面</h3><p> &emsp;&emsp;商店界面大致分5个功能<br> &emsp;&emsp;&emsp;&emsp;(1)背景及商人的实现<br> &emsp;&emsp;&emsp;&emsp;(2)商人对话框<br> &emsp;&emsp;&emsp;&emsp;(3)物品介绍<br> &emsp;&emsp;&emsp;&emsp;(4)物品显示<br> &emsp;&emsp;&emsp;&emsp;(5)下一关按钮<br> <img src="1.png" alt="1"></p>
+<h1 id="场景实现"><a href="#场景实现" class="headerlink" title="场景实现"></a>场景实现</h1><h2 id="开始界面-1"><a href="#开始界面-1" class="headerlink" title="开始界面"></a>开始界面</h2><h3 id="背景图的实现"><a href="#背景图的实现" class="headerlink" title="背景图的实现"></a>背景图的实现</h3><p>&emsp;&emsp;在mainmnue界面重写绘图事件<code>void paintEvent(QPaintEvent *);</code>把开始界面以绘图的方式布置在第一个窗口。</p>
+<h3 id="开始按钮的实现"><a href="#开始按钮的实现" class="headerlink" title="开始按钮的实现"></a>开始按钮的实现</h3><p>&emsp;&emsp;QT有自带的pushbutton组件，不过并不能实现不规则图形按钮。所以打算自己写一个类。<br>&emsp;&emsp;mypushbutton类中函数列表如下<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//继承QPushButton</span></span><br><span class="line"><span class="built_in">MyPushButton</span>(QString normarImg);<span class="comment">//创建不规则按钮，图片大小为默认大小，</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">setSize</span><span class="params">(<span class="keyword">double</span> n)</span></span>;<span class="comment">//重新设置图片大小</span></span><br><span class="line"><span class="comment">//实现简单的跳动动画</span></span><br><span class="line">   <span class="comment">//向下移动</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">zoom1</span><span class="params">()</span></span>;</span><br><span class="line">   <span class="comment">//向上移动</span></span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">zoom2</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></p>
+<h4 id="mypushbutton具体实现方式"><a href="#mypushbutton具体实现方式" class="headerlink" title="mypushbutton具体实现方式"></a>mypushbutton具体实现方式</h4><p>&emsp;&emsp;Qpixmap加载图标，通过<code>setFixedSize();setStyleSheet();</code>函数设置图片大小，不规则样式。<code>setIcon();</code>设置图标，<code>setIconSize();</code>设置图标大小（设置图片大小相当于预留空间给图标，而设置图标大小则是使图标充满预留的图片大小空间）。<br>&emsp;&emsp;因为继承的QPushButton，不用写按钮事件。</p>
+<h4 id="简单跳动动画实现方式"><a href="#简单跳动动画实现方式" class="headerlink" title="简单跳动动画实现方式"></a>简单跳动动画实现方式</h4><p>&emsp;&emsp;创建QPropertyAnimation动画对象，<code>setDuration();</code>设置时间间隔，<code>setStartValue();</code>设置起始位置，<code>setEndValue();</code>设置结束位置。<br>&emsp;&emsp;<code>setEasingCurve(QEasingCurve::OutBounce);</code>设置弹起效果,最后让动画执行<code>start();</code><br>&emsp;&emsp;动画执行里边有一个参数可以让动画执行完毕后释放动画对象。防止堆区内存泄漏，要加上这个参数<br>&emsp;&emsp;动画只能向一个方向弹起，所以要用两个函数实现跳动的效果。</p>
+<h2 id="游戏进行中界面"><a href="#游戏进行中界面" class="headerlink" title="游戏进行中界面"></a>游戏进行中界面</h2><h4 id="文字显示"><a href="#文字显示" class="headerlink" title="文字显示"></a>文字显示</h4><p>&emsp;&emsp;用QLabel简单实现四个标签，在获得分数时重写以达到更新的效果。对于时间选择QTime作计时器。</p>
+<h4 id="旋转钩子及释放钩子"><a href="#旋转钩子及释放钩子" class="headerlink" title="旋转钩子及释放钩子"></a>旋转钩子及释放钩子</h4><p>&emsp;&emsp;重写<code>void paintEvent(QPaintEvent *);</code>,加载图片<br>&emsp;&emsp;旋转钩子及释放钩子，利用Qpainter实现旋转钩子及释放钩子<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">QPainter <span class="title">painter</span><span class="params">(<span class="keyword">this</span>)</span></span></span><br><span class="line"><span class="function">painter.<span class="title">translate</span><span class="params">()</span></span>;<span class="comment">//设置旋转中心</span></span><br><span class="line">painter.<span class="built_in">rotate</span>();<span class="comment">//旋转一定角度</span></span><br><span class="line">painter.<span class="built_in">translate</span>();<span class="comment">//使原点复原</span></span><br></pre></td></tr></table></figure><br>&emsp;&emsp;检测矿工状态，如果在旋转<code>painter.drawPixmap();</code>设置绘图原点，在原地旋转。<br>如果没有旋转：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Qpen pen;</span><br><span class="line">pen.<span class="built_in">setWidth</span>(<span class="number">6</span>);</span><br><span class="line">...<span class="comment">//pen参数设置</span></span><br><span class="line">painter.<span class="built_in">drawLine</span>();<span class="comment">//画线</span></span><br><span class="line">painter.<span class="built_in">drawPixmap</span>();<span class="comment">//绘图起点</span></span><br></pre></td></tr></table></figure><br>抛出钩子。，通过改变钩子长度属性实现画线长度改变的动画。<br>&emsp;&emsp;最后<code>update();</code>,强制刷新以达到动画效果。</p>
+<h4 id="矿物的显示及移动"><a href="#矿物的显示及移动" class="headerlink" title="矿物的显示及移动"></a>矿物的显示及移动</h4><p>&emsp;&emsp;新建类item，用来表示矿物。其属性包括坐标，分值，种类，速度等，在其中导入所有物品图片。<br>&emsp;&emsp;对特殊矿物如宝藏袋，炸药桶建立特殊函数，对老鼠用QTime和move()实现移动<br>&emsp;&emsp;增加碰撞检测，输入钩子坐标判断是否发生碰撞。<br>&emsp;&emsp;如发生碰撞则移动对象，到达矿工处计入得分并释放对象<br>&emsp;&emsp;时间结束，释放所有未钩到的对象。</p>
+<h4 id="特殊物品的显示及使用"><a href="#特殊物品的显示及使用" class="headerlink" title="特殊物品的显示及使用"></a>特殊物品的显示及使用</h4><p>&emsp;&emsp;在item类中新增加特殊物品<br>&emsp;&emsp;在矿工类中保存数据，在每一关开始都创建出对象。<br>&emsp;&emsp;对不同物品建立对应函数。</p>
+<h2 id="转场界面-1"><a href="#转场界面-1" class="headerlink" title="转场界面"></a>转场界面</h2><p>&emsp;&emsp;背景图重写<code>void paintEvent(QPaintEvent *);</code><br>&emsp;&emsp;文字实现用Qlabel.</p>
+<h2 id="商店界面-1"><a href="#商店界面-1" class="headerlink" title="商店界面"></a>商店界面</h2><p>&emsp;&emsp;用随机函数随机建立物品对象，同时控制价格跟随关卡变动。<br>&emsp;&emsp;购买数据录入矿工类</p>
+<h2 id="关卡设计"><a href="#关卡设计" class="headerlink" title="关卡设计"></a>关卡设计</h2><p>&emsp;&emsp;新建类dataconfig,用二维数组保存item信息，map确定对应关卡<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">QMap&lt;<span class="keyword">int</span>,QVector&lt;QVector&lt;<span class="keyword">int</span>&gt;&gt;&gt; mDate;</span><br><span class="line"></span><br><span class="line">QMap&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; mGoal;</span><br></pre></td></tr></table></figure></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>&emsp;&emsp;完整的完成一个可执行的程序，一定程度上提升了我的编程能力。后续学习对更大得项目也有了一定的信心。</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/2023/03/12/%E5%81%87%E6%9C%9F%E5%B0%8F%E9%A1%B9%E7%9B%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E9%A1%B9%E7%9B%AE-Qt/" rel="tag">小项目,Qt</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/06/25/blog%E5%88%86%E9%A1%B5/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">blog增加tags分页</div>
+      </a>
+    
+  </nav>
+
+  
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2021-2023
+        <i class="ri-heart-fill heart_icon"></i> lucky_dog
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Lucky_blog"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/sponsor.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.6/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+ 
+<script src="/js/clickLove.js"></script>
+ 
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="86"
+        src="//music.163.com/outchain/player?type=2&id=1807381939&auto=1&height=66"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+    
+
+  </div>
+</body>
+
+</html>
