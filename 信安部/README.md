@@ -40,9 +40,7 @@ union select 1,username,password from users limit 0,1
 
 ##### 图片转文字（周）：
 
-图片文本：
-
-链接：
+作用：图片文本（txt）格式保存+效果图（png格式）
 
 效果图：
 
